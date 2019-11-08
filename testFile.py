@@ -31,7 +31,7 @@ class TestAccount(unittest.TestCase):
     Cleans up the (user) list which stores accounts
     '''
     UserData.users=[]
-    
+
   def test_delete_account(self):
     '''
     Test case to check if we can delete our already existing account.
@@ -43,6 +43,18 @@ class TestAccount(unittest.TestCase):
 
     self.new_account.delete_account()
     self.assertEqual(len(UserData.users),1)
+
+  def test_account_exists(self):
+    '''
+    Test case to check if an account exits .
+    '''
+    self.new_account.save_account()
+
+    another_account = UserData("Maxy","Jerry","Gery420")
+    another_account.save_account()
+
+    account_exists= UserData.account_exists("Maxy")
+    self.assertTrue(account_exists)
 
     
 if __name__ == '__main__':

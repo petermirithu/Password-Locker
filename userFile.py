@@ -23,5 +23,16 @@ class UserData:
     Function to delete an account thats already existing.
     '''
     UserData.users.remove(self)
+
+  @classmethod
+  def account_exists(cls,username):
+    '''
+    Function to check if an account exist by first name.
+    '''
+    for account in cls.users:
+      if account.firstName == username:
+        return True
+
+    return False       
+
     
-  # def existing  
