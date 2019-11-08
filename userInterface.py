@@ -50,10 +50,17 @@ def Interface():
   print("Enter password")
   psswd_Login=input()
 
-  if user_name == firstName and psswd_Login==password:
-    print("Succesfully loged in as ....{user_name}...")
-  else:
-    print("Try again")  
+  if account_exists(user_name):
+    account_found= account_exists(user_name)
+    if account_found.firstName==user_name and account_found.password==psswd_Login:
+      print("Succesfully loged in as ....{user_name}...")    
+    else:
+      print("Try again")  
+      
+  # if user_name == firstName and psswd_Login==password:
+  #   print("Succesfully loged in as ....{user_name}...")
+  # else:
+  #   print("Try again")  
 
 if __name__=='__main__':
   Interface()

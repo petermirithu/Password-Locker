@@ -25,6 +25,15 @@ class UserData:
     UserData.users.remove(self)
 
   @classmethod
+  def find_account(cls,username):
+    '''
+    Function to find an account based on firstname.
+    '''
+    for account in cls.users:
+      if account.firstName ==username:
+        return account
+
+  @classmethod
   def account_exists(cls,username):
     '''
     Function to check if an account exist by first name.
