@@ -17,3 +17,11 @@ class UserData:
     Function that saves a new account to the password locker app
     '''
     UserData.users.append(self)    
+
+  def delete_account(self):
+    '''
+    Function to delete an account thats already existing.
+    '''
+    UserData.users.remove(self)
+    
+  # def existing  
