@@ -28,7 +28,38 @@ def account_exists(username):
 
 #The userInterface
 def Interface():
-   
+  print("Welcome to PASSWORD LOCKER APP") 
+  print('\n')
+
+  print("Please Create An Account...")
+
+  print("Enter Firstname...")
+  firstName=input()
+  print("Enter Lastname...")
+  lastName=input()
+  print("Create Password...")
+  password=input()
+
+  save_account(new_account(firstName,lastName,password))
+
+  print(f"Congrast __ {firstName} __.Please Login to your freshh account...")
+  print('\n')
+
+  print("Enter firstname")
+  user_name=input()
+  print("Enter password")
+  psswd_Login=input()
+
+  if user_name == firstName and psswd_Login==password:
+    print("Succesfully loged in as ....{user_name}...")
+  else:
+    print("Try again")  
+
+if __name__=='__main__':
+  Interface()
+
+
+
 
 
   
