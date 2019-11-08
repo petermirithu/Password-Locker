@@ -1,5 +1,6 @@
 import unittest 
 from userFile import UserData
+from credentialFile import Credential_Sect
 
 class TestAccount(unittest.TestCase):
   '''
@@ -10,15 +11,22 @@ class TestAccount(unittest.TestCase):
     The method runs before each test to provide an existing account for our testing benefit.
     '''
     self.new_account = UserData("Pyra","Myra","Lexus007")
+    self.new_credential= Credential_Sect("Twitter","pyra_myra","BMW2019")
 
   def test_init(self):
     '''
-    Test case to see if the the object is initialized in a proper manner.
+    Test case to see if the an object is initialized in a proper manner.
     '''
+    #initialization for accounts in password locker
     self.assertEqual(self.new_account.firstName,"Pyra")
     self.assertEqual(self.new_account.lastName,"Myra")
     self.assertEqual(self.new_account.password,"Lexus007")
     
+    #initilization for credetials
+    self.assertEqual(self.new_credential.title,"Twitter")
+    self.assertEqual(self.new_credential.site_username,"pyra_myra")
+    self.assertEqual(self.new_credential.cred_password,"BMW2019")
+
   def test_save_account(self):
     '''
     Test case to check if we can save a new account in (user) list.
@@ -70,6 +78,8 @@ class TestAccount(unittest.TestCase):
     account_exists= UserData.account_exists("Maxy")
     self.assertTrue(account_exists)
 
+
+    
     
 if __name__ == '__main__':
   unittest.main()

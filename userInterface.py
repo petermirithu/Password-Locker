@@ -58,7 +58,10 @@ def Interface():
   if account_exists(user_name):
     account_found= find_account(user_name)
     if account_found.firstName == user_name and account_found.password==psswd_Login:
-      print("Succesfully loged in as ....{user_name}...")    
+      print(f"Succesfully loged in as ....{user_name}...")    
+
+      while True:
+        print("")
     else:
       print("Try again")  
 
