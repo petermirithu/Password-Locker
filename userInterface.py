@@ -19,6 +19,11 @@ def delete_account(userFile):
   Function to delete only an existing account
   '''
   userFile.delete_account()
+def find_account(username):
+  '''
+  Function to find an account based on firstname which is the username
+  '''
+  return UserData.find_account(username)
 
 def account_exists(username):
   '''
@@ -51,16 +56,13 @@ def Interface():
   psswd_Login=input()
 
   if account_exists(user_name):
-    account_found= account_exists(user_name)
-    if account_found.firstName==user_name and account_found.password==psswd_Login:
+    account_found= find_account(user_name)
+    if account_found.firstName == user_name and account_found.password==psswd_Login:
       print("Succesfully loged in as ....{user_name}...")    
     else:
       print("Try again")  
-      
-  # if user_name == firstName and psswd_Login==password:
-  #   print("Succesfully loged in as ....{user_name}...")
-  # else:
-  #   print("Try again")  
+
+  
 
 if __name__=='__main__':
   Interface()
