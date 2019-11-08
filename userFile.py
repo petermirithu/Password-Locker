@@ -5,6 +5,15 @@ class UserData:
   users=[]
 
   def __init__(self,firstName,lastName,password):
+    '''
+    A function that initialise the attributes of a new account in Passwordlocker.
+    '''
     self.firstName = firstName
     self.lastName = lastName
     self.password = password
+
+  def save_account(self):
+    '''
+    Function that saves a new account to the password locker app
+    '''
+    UserData.users.append(self)    
