@@ -1,6 +1,6 @@
 # PASSWORD_LOCKER!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
+This project was generated with [Python](https://www.python.org/) version 3.8.0
 
 ## Author: 
   * Peter Mirithu 
@@ -12,15 +12,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     Software Developer.<br>
     Telephone N.O: 0790476167          
 ## Description
- This is an Angular web application that gives a user a chance to search for any user name on git hub and get the data and repositories belonging to that user name.
+ This is a terminal app generated using python that helps in saving credentials for multiple account so as to be used as a reference centre when one has forgotten their password.
 
 ## Setup Requirements
-* A digital device with internet connectivity.
-* A digital device with colored screen.
-* Wifi or Bundles.
+* A laptop or desktop computer.
+* Wifi or Bundles to download the app.
+* Python language.
 
+## Project setup instructions
+* Download or clone from Git-hub.
+* In the terminal, navigate to where the project is located.
+* Run this command:
+    *$ chmod +x userInterface.py*  :-To make the program executable.
+    *$ ./userInterface.py* :-to open the program.
+* use the codes provided to be able to navigate around the program.
+    
 ## Technologies Used
- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9. and Bootstrap with css stylesheet.
+ This project was generated with [Python](https://www.python.org/) version 3.8.0.
 
  ## Support and contact details
  Incase of a problem, issue or need more clarification, feel free to send an email @<br> {pyra_m.k@yahoo.com}<br>
