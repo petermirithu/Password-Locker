@@ -77,7 +77,7 @@ def credential_exists(site_username):
   Function that checks if a credential exists
   '''
   return Credential_Sect.credential_exists(site_username)
-  
+
   
 #The userInterface--------------------------------------------------------------------
 def Interface():
@@ -95,7 +95,7 @@ def Interface():
 
   save_account(new_account(firstName,lastName,password))
 
-  print(f"Congrast __ {firstName} __.Please Login to your freshh account...")
+  print(f"Congrast __ {firstName} __.Please Login to your fresh account...")
   print('\n')
 
   print("Enter firstname")
@@ -118,7 +118,27 @@ def Interface():
         print("nc --Create a new credential __")
         print("dsp --Showcase all existing credentials __")
         print("dlt --Delete a credential __")
-        #----------------------------------------
+        print("exit --Exit the App __")
+        print("Enter code-------------------------")
+        code_in=input().lower()
+
+        if code == 'sc':
+          print("Store Your Credential")
+          print("------------------------------------------------------------------")
+
+          print("Site Name")
+          site_name=input()
+
+          print("User Name")
+          user_name=input()
+
+          print("Password")
+          password=input()
+
+          
+        elif
+        else:
+          print("That code does not exist.Please use what I have provided!!")
     else:
       print("Try again")  
 
