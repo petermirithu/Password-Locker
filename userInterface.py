@@ -82,6 +82,7 @@ def credential_exists(site_username):
   
 #The userInterface--------------------------------------------------------------------
 def Interface():
+
   print("Welcome to PASSWORD LOCKER APP") 
   print('\n')
 
@@ -234,15 +235,20 @@ def Interface():
               print("Your lucky I never deleted it.")                         
               
         elif code_in =='exit':
+          print('\n')
           print("It was nice hosting you here...your welcome again...")
           print('-'*100)
+          print('\n')
           break
 
         else:
+          print('\n')
           print("That code does not exist.Please use what I have provided!!")
+          print('\n')
     else:
+      print('\n')
       print("Incorrect Login Details......................")  
-
+      print('\n')
   
 
 if __name__=='__main__':
