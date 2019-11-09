@@ -232,7 +232,12 @@ def Interface():
               print(f"Successfully deleted ~~~ {search_result.site_username} ~~~")
               
             else:
-              print("Your lucky I never deleted it.")                         
+              print("Your lucky I never deleted it.")     
+
+          else:
+            print('\n')
+            print("Credential does not exist!!!")                                    
+            print('\n')
               
         elif code_in =='exit':
           print('\n')
