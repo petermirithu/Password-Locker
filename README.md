@@ -12,7 +12,7 @@ This project was generated with [Python](https://www.python.org/) version 3.8.0
     Software Developer.<br>
     Telephone N.O: 0790476167          
 ## Description
- This is a terminal app generated using python that helps in saving credentials for multiple account so as to be used as a reference centre when one has forgotten their password.
+ This is a terminal program generated using python that helps in saving credentials for multiple accounts so as to be used as a reference centre when one has forgotten their password.
 
 ## Setup Requirements
 * A laptop or desktop computer.
@@ -26,7 +26,13 @@ This project was generated with [Python](https://www.python.org/) version 3.8.0
     *$ chmod +x userInterface.py*  :-To make the program executable.
     *$ ./userInterface.py* :-to open the program.
 * use the codes provided to be able to navigate around the program.
-    
+
+        *sc --Store already existing credential*
+        *nc --Create a new credential*
+        *dsp --Showcase all existing credentials*
+        *dlt --Delete a credential*
+        *exit --Exit the App*
+
 ## Technologies Used
  This project was generated with [Python](https://www.python.org/) version 3.8.0.
 
