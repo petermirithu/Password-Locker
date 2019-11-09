@@ -50,7 +50,7 @@ def save_credential(credentialFile):
 
 def generate_password(credentialFile):
   '''
-  Function that generates a randow=m string which is a password
+  Function that generates a random string which is a password
   '''
   credentialFile.generate_password()
 
@@ -145,10 +145,10 @@ def Interface():
           print("-------------------------------------------------------------------")
 
           print("Enter Site name")
-          site_name=input()
+          site_name2=input()
 
           print("Enter User name")
-          user_name=input()
+          user_name2=input()
 
           print("Would you want me generate a password for you?")
           print("key in_________:y --for Yes_______:n --for No")
@@ -157,11 +157,31 @@ def Interface():
 
           if pass_ans == 'y':
             
-            passGen=generate_password()          
+            pass_Gen = generate_password()          
             print("Here is your password......")
             print('\n')
 
-            print(f" ____ {pass_ans} ____")
+            print(f" ____ {pass_Gen} ____")
+            print('\n')  
+
+            save_credential(new_credential(site_name2,user_name2,pass_Gen))
+
+          elif pass_ans == 'n':  
+
+            print("Enter your password...")
+            pass_Input =input()
+
+            save_credential(new_credential(site_name2,user_name2,pass_Input))
+
+          else:
+            print('\n')
+            print("Did not get what you typed")  
+            print('\n')
+
+
+
+
+
 
 
 
