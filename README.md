@@ -24,15 +24,16 @@ This project was generated with [Python](https://www.python.org/) version 3.8.0
 * In the terminal, navigate to where the project is located.
 * Run this command:
 
-    *$ chmod +x userInterface.py*  :-To make the program executable.<br>
-    *$ ./userInterface.py* :-to open the program.<br>
+    *$ chmod +x userInterface.py  :-To make the program executable.*<br>
+    *$ ./userInterface.py :-to open the program.*<br>
 
 * use the codes provided to be able to navigate around the program.
-        *sc --Store already existing credential* <br>        
-        *nc --Create a new credential*<br>
-        *dsp --Showcase all existing credentials*<br>
-        *dlt --Delete a credential*<br>
-        *exit --Exit the App*<br>
+
+        sc --Store already existing credential
+        nc --Create a new credential
+        dsp --Showcase all existing credentials
+        dlt --Delete a credential
+        exit --Exit the App
 
 ## Technologies Used
  This project was generated with [Python](https://www.python.org/) version 3.8.0.
