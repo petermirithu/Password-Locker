@@ -1,3 +1,5 @@
+import random
+import string
 class Credential_Sect:
   '''
   Blue print for all credentials
@@ -18,7 +20,13 @@ class Credential_Sect:
     '''
     Credential_Sect.credentials_list.append(self)
 
-  # def generate_password(self):
+  def generate_password(self):
+    '''
+    Function that genetates random string
+    '''
+    Random_password= string.ascii_letters
+    return ''.join(random.choice(Random_password) for i in range(6))
+    
 
   @classmethod
   def display_credentials(cls):

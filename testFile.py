@@ -1,4 +1,7 @@
 import unittest 
+import random
+import string
+
 from userFile import UserData
 from credentialFile import Credential_Sect
 
@@ -92,7 +95,14 @@ class TestAccount(unittest.TestCase):
     self.new_credential.save_credential()
     self.assertEqual(len(Credential_Sect.credentials_list),1)
 
-  # def test_genrate_password(self):
+  def test_generate_password(self):
+    '''
+    Test case to generate a password randomly for a user.
+    '''
+    
+    psswd="0987yhnm"
+    self.assertEqual(Credential_Sect.generate_password(self),psswd)
+    
 
   def test_display_credentails(self):
     '''
