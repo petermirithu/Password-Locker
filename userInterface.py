@@ -65,6 +65,18 @@ def delete_credential(credentialFile):
   Function that deletes existing credential
   '''
   credentialFile.delete_credential()
+
+def find_credential(site_username):
+  '''
+  Function that find a credential
+  '''
+  return Credential_Sect.find_credential(site_username)
+
+def credential_exists(site_username):
+  '''
+  Function that checks if a credential exists
+  '''
+  return Credential_Sect.credential_exists(site_username)
   
   
 #The userInterface--------------------------------------------------------------------
@@ -94,10 +106,19 @@ def Interface():
   if account_exists(user_name):
     account_found= find_account(user_name)
     if account_found.firstName == user_name and account_found.password==psswd_Login:
-      print(f"Succesfully loged in as ....{user_name}...")    
+      print(f"Succesfully loged in as ....{user_name}...")
+      print('\n')    
 
       while True:
-        print("")
+        print(f"Welcome --- {user_name} --- to your PassWord Locker!")
+        print('\n')
+
+        print("Use this codes to navigate arround your Account.")
+        print("sc --Store already existing credential __")  
+        print("nc --Create a new credential __")
+        print("dsp --Showcase all existing credentials __")
+        print("dlt --Delete a credential __")
+        #----------------------------------------
     else:
       print("Try again")  
 

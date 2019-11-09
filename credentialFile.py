@@ -42,5 +42,24 @@ class Credential_Sect:
     Credential_Sect.credentials_list.remove(self)
 
 
+  @classmethod
+  def find_credential(cls,site_username):
+    '''
+    Function to find an account based on firstname.
+    '''
+    for credential in cls.credentials_list:
+      if credential.site_username == site_username:
+        return credential
+
+  @classmethod
+  def credential_exists(cls,site_username):
+    '''
+    Function to check if an account exist by first name.
+    '''
+    for credential in cls.credentials_list:
+      if credential.site_username == site_username:
+        return True
+
+    return False       
 
 

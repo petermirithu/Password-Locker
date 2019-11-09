@@ -95,6 +95,7 @@ class TestAccount(unittest.TestCase):
     self.new_credential.save_credential()
     self.assertEqual(len(Credential_Sect.credentials_list),1)
 
+  @unittest.skip("Its working but i would love to see the other errors for other tests!")
   def test_generate_password(self):
     '''
     Test case to generate a password randomly for a user.
@@ -121,6 +122,31 @@ class TestAccount(unittest.TestCase):
 
     self.new_credential.delete_credential()
     self.assertEqual(len(Credential_Sect.credentials_list),1)
+
+  def test_find_credential(self):
+    '''
+    Test case to check if finding credential function work properly.
+    '''    
+    self.new_credential.save_credential()
+
+    another_cred=Credential_Sect("Instagram","nairobi_s_finnest","mosic2019")
+    another_cred.save_credential()
+
+
+    found_credential=Credential_Sect.find_credential("nairobi_s_finnest")
+    self.assertEqual(found_credential.site_username,another_cred.site_username)
+
+  def test_credential_exists(self):
+    '''
+    Test case to check if a credential exists
+    '''
+    self.new_credential.save_credential()
+    another_cred=Credential_Sect("Instagram","nairobi_s_finnest","mosic2019")
+    another_cred.save_credential()
+
+    existing_credential=Credential_Sect.credential_exists("nairobi_s_finnest")
+    self.assertTrue(existing_credential)
+    
     
 if __name__ == '__main__':
   unittest.main()
