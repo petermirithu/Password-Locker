@@ -135,8 +135,39 @@ def Interface():
           print("Password")
           password=input()
 
-          
-        elif
+          save_credential(new_credential(site_username,user_name,password))
+          print('\n')
+          print(f"New credential for --- {site_name} --- created.")
+          print('\n')
+
+        elif code == 'nc':
+          print("Create a new credential")
+          print("-------------------------------------------------------------------")
+
+          print("Enter Site name")
+          site_name=input()
+
+          print("Enter User name")
+          user_name=input()
+
+          print("Would you want me generate a password for you?")
+          print("key in_________:y --for Yes_______:n --for No")
+          print("Enter y/n")
+          pass_ans=input().lower()
+
+          if pass_ans == 'y':
+            
+            passGen=generate_password()          
+            print("Here is your password......")
+            print('\n')
+
+            print(f" ____ {pass_ans} ____")
+
+
+
+          if 
+
+
         else:
           print("That code does not exist.Please use what I have provided!!")
     else:
