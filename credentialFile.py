@@ -20,12 +20,15 @@ class Credential_Sect:
     '''
     Credential_Sect.credentials_list.append(self)
 
-  def generate_password(self):
+  @classmethod
+  def generate_password(cls):
     '''
     Function that genetates random string
     '''
     Random_password= string.ascii_letters
-    return ''.join(random.choice(Random_password) for i in range(6))
+    res=''.join(random.choice(Random_password) for i in range(6))
+    return res
+    
     
 
   @classmethod

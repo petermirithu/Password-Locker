@@ -48,11 +48,11 @@ def save_credential(credentialFile):
   '''
   credentialFile.save_credential()
 
-def generate_password(credentialFile):
+def generate_password():
   '''
   Function that generates a random string which is a password
   '''
-  credentialFile.generate_password()
+  return Credential_Sect.generate_password()
 
 def display_credential():
   '''
@@ -158,14 +158,14 @@ def Interface():
 
           if pass_ans == 'y':
             
-            pass_Gen = generate_password()          
+            save_credential(new_credential(site_name2,user_name2,generate_password(credentialFile)))
+                 
             print("Here is your password......")
             print('\n')
 
-            print(f" ____ {pass_Gen} ____")
+            print(f" ____ 23456 ____")
             print('\n')  
 
-            save_credential(new_credential(site_name2,user_name2,pass_Gen))
 
           elif pass_ans == 'n':  
 
