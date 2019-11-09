@@ -122,7 +122,7 @@ def Interface():
         print("Enter code-------------------------")
         code_in=input().lower()
 
-        if code == 'sc':
+        if code_in == 'sc':
           print("Store Your Credential")
           print("------------------------------------------------------------------")
 
@@ -135,12 +135,12 @@ def Interface():
           print("Password")
           password=input()
 
-          save_credential(new_credential(site_username,user_name,password))
+          save_credential(new_credential(site_name,user_name,password))
           print('\n')
           print(f"New credential for --- {site_name} --- created.")
           print('\n')
 
-        elif code == 'nc':
+        elif code_in == 'nc':
           print("Create a new credential")
           print("-------------------------------------------------------------------")
 
@@ -178,20 +178,29 @@ def Interface():
             print("Did not get what you typed")  
             print('\n')
 
+        elif code_in =='dsp':
+          if display_credentials():
+            print("Available credentials...")
+            print('\n')
 
+            for cred in display_credentials():
+              print(f"{cred.title}__{cred.site_username}__{cred.cred_password}")
+              print('\n')
 
-
-
-
-
-
-          if 
-
+          else:
+            print('\n')
+            print("You dont have any credentials saved")      
+            print('\n')
+        
+        elif code_in =='exit':
+          print("It was hosting you here...your welcome again...")
+          print('-'*100)
+          break
 
         else:
           print("That code does not exist.Please use what I have provided!!")
     else:
-      print("Try again")  
+      print("Incorrect Login Details......................")  
 
   
 
