@@ -1,4 +1,4 @@
-# GIT_SEARCH.
+# PASSWORD_LOCKER!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
@@ -30,4 +30,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * This project is licensed by [MIT License] (LICENSE).
   Copyright (c) 2019 
   
-# GIT_SEARCH.
+# PASSWORD_LOCKER!
