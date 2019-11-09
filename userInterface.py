@@ -54,7 +54,7 @@ def generate_password(credentialFile):
   '''
   credentialFile.generate_password()
 
-def display_credentials():
+def display_credential():
   '''
   Function that displays all credentials existing
   '''
@@ -91,34 +91,35 @@ def Interface():
   print("Enter Lastname...")
   lastName=input()
   print("Create Password...")
-  password=input()
+  password_log=input()
 
-  save_account(new_account(firstName,lastName,password))
+  save_account(new_account(firstName,lastName,password_log))
 
   print(f"Congrast __ {firstName} __.Please Login to your fresh account...")
   print('\n')
 
   print("Enter firstname")
-  user_name=input()
+  user_name_Log=input()
   print("Enter password")
   psswd_Login=input()
 
-  if account_exists(user_name):
-    account_found= find_account(user_name)
-    if account_found.firstName == user_name and account_found.password==psswd_Login:
-      print(f"Succesfully loged in as ....{user_name}...")
+  if account_exists(user_name_Log):
+    account_found= find_account(user_name_Log)
+    if account_found.firstName == user_name_Log and account_found.password==psswd_Login:
+      print(f"Succesfully loged in as ....{user_name_Log}...")
       print('\n')    
 
       while True:
-        print(f"Welcome --- {user_name} --- to your PassWord Locker!")
+        print('~*~'*30)
+        print(f"Welcome --- {firstName} --- to your PassWord Locker!")
         print('\n')
 
         print("Use this codes to navigate arround your Account.")
-        print("sc --Store already existing credential __")  
-        print("nc --Create a new credential __")
-        print("dsp --Showcase all existing credentials __")
-        print("dlt --Delete a credential __")
-        print("exit --Exit the App __")
+        print("sc --Store already existing credential")  
+        print("nc --Create a new credential ")
+        print("dsp --Showcase all existing credentials")
+        print("dlt --Delete a credential")
+        print("exit --Exit the App")
         print("Enter code-------------------------")
         code_in=input().lower()
 
@@ -179,21 +180,60 @@ def Interface():
             print('\n')
 
         elif code_in =='dsp':
-          if display_credentials():
+          if display_credential():
+            print('^'*50)
             print("Available credentials...")
             print('\n')
 
-            for cred in display_credentials():
-              print(f"{cred.title}__{cred.site_username}__{cred.cred_password}")
+            for cred in display_credential():
+              print(f"{cred.title}  {cred.site_username}  {cred.cred_password}")
               print('\n')
-
+              print('^'*50)  
           else:
             print('\n')
             print("You dont have any credentials saved")      
             print('\n')
+            print('^'*50)
         
+        elif code_in == 'dlt':
+          print("To Delete......search the credential you want to delete")
+          
+          if display_credential():
+            print('^'*50)
+            print("Available credentials...")
+            print('\n')
+
+            for cred in display_credential():
+              print(f"{cred.title}  {cred.site_username}  {cred.cred_password}")
+              print('\n')
+              print('^'*50)  
+
+              print("Enter the user_name for that credential to search...")  
+              search=input()
+              if credential_exists(search):
+                search_result=find_credential(search)
+                print(f"{search_result.title}  {search_result.site_username} {search_result.cred_password}")
+                print("^"*50)
+                print('\n')
+
+                print("Enter y/n to delete this credential")
+                yes_no=input().lower()
+                if yes_no == 'y':
+                  search_result.delete_credential()
+                else:
+                  print("Your lucky I never deleted it.")  
+              else:
+                print("Credential does not exist !!!")    
+
+          else:
+            print('\n')
+            print("You dont have any credentials to delete!!!!")      
+            print('\n')
+            print('^'*50)
+
+          
         elif code_in =='exit':
-          print("It was hosting you here...your welcome again...")
+          print("It was nice hosting you here...your welcome again...")
           print('-'*100)
           break
 
