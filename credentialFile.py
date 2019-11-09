@@ -17,7 +17,21 @@ class Credential_Sect:
     Function to save any new credential
     '''
     Credential_Sect.credentials_list.append(self)
-    
+
+  # def generate_password(self):
+
+  @classmethod
+  def display_credentials(cls):
+    '''
+    Function that shows all credentials that exist in ones account.
+    '''
+    return cls.credentials_list
+
+  def delete_credential(self):
+    '''
+    Function that deletes an existing credential
+    '''
+    Credential_Sect.credentials_list.remove(self)
 
 
 

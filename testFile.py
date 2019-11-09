@@ -10,7 +10,10 @@ class TestAccount(unittest.TestCase):
     '''
     The method runs before each test to provide an existing account for our testing benefit.
     '''
+    #setUp for an account
     self.new_account = UserData("Pyra","Myra","Lexus007")
+
+    #setup for a credential
     self.new_credential= Credential_Sect("Twitter","pyra_myra","BMW2019")
 
   def test_init(self):
@@ -38,7 +41,11 @@ class TestAccount(unittest.TestCase):
     '''
     Cleans up the (user) list which stores accounts
     '''
+    #clean list for accounts
     UserData.users=[]
+    
+    # clean list for credentials
+    Credential_Sect.credentials_list=[]
 
   def test_delete_account(self):
     '''
@@ -64,8 +71,6 @@ class TestAccount(unittest.TestCase):
     found_account=UserData.find_account("Maxy")
     self.assertEqual(found_account.firstName,another_account.firstName)
 
-
-
   def test_account_exists(self):
     '''
     Test case to check if an account exits .
@@ -79,7 +84,33 @@ class TestAccount(unittest.TestCase):
     self.assertTrue(account_exists)
 
 
-    
+  #Credential tests only
+  def test_save_credential(self):
+    '''
+    test case to check if one can save a credential in credential list.
+    '''
+    self.new_credential.save_credential()
+    self.assertEqual(len(Credential_Sect.credentials_list),1)
+
+  # def test_genrate_password(self):
+
+  def test_display_credentails(self):
+    '''
+    test case to showcase all credentials saved in the credential list.
+    '''
+    self.assertEqual(Credential_Sect.display_credentials(),Credential_Sect.credentials_list)
+
+  def test_delete_credential(self):
+    '''
+    test case to delete a credential of choice
+    '''
+    self.new_credential.save_credential()
+
+    another_cred=Credential_Sect("Instagram","nairobi_s_finnest","mosic2019")
+    another_cred.save_credential()
+
+    self.new_credential.delete_credential()
+    self.assertEqual(len(Credential_Sect.credentials_list),1)
     
 if __name__ == '__main__':
   unittest.main()
