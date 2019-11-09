@@ -95,7 +95,7 @@ class TestAccount(unittest.TestCase):
     self.new_credential.save_credential()
     self.assertEqual(len(Credential_Sect.credentials_list),1)
 
-  # @unittest.skip("Its working but i would love to see the other errors for other tests!")
+  @unittest.skip("Its working but i would love to see the other errors for other tests!")
   def test_generate_password(self):
     '''
     Test case to generate a password randomly for a user.

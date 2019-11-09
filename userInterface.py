@@ -157,13 +157,13 @@ def Interface():
           pass_ans=input().lower()
 
           if pass_ans == 'y':
-            
-            save_credential(new_credential(site_name2,user_name2,generate_password(credentialFile)))
+            pass_Gen= generate_password()
+            save_credential(new_credential(site_name2,user_name2,pass_Gen))
                  
             print("Here is your password......")
             print('\n')
 
-            print(f" ____ 23456 ____")
+            print(f" ____ {pass_Gen} ____")
             print('\n')  
 
 
@@ -207,31 +207,29 @@ def Interface():
               print(f"{cred.title}  {cred.site_username}  {cred.cred_password}")
               print('\n')
               print('^'*50)  
-
-              print("Enter the user_name for that credential to search...")  
-              search=input()
-              if credential_exists(search):
-                search_result=find_credential(search)
-                print(f"{search_result.title}  {search_result.site_username} {search_result.cred_password}")
-                print("^"*50)
-                print('\n')
-
-                print("Enter y/n to delete this credential")
-                yes_no=input().lower()
-                if yes_no == 'y':
-                  search_result.delete_credential()
-                else:
-                  print("Your lucky I never deleted it.")  
-              else:
-                print("Credential does not exist !!!")    
-
           else:
             print('\n')
-            print("You dont have any credentials to delete!!!!")      
+            print("You dont have any credentials saved")      
             print('\n')
             print('^'*50)
-
           
+          print("Enter the user_name for that credential to search...")  
+          search=input()
+          if credential_exists(search):
+            search_result=find_credential(search)
+            print('\n')
+            print(f"{search_result.title}  {search_result.site_username} {search_result.cred_password}")
+            print("^"*50)
+            print('\n')
+
+            print("Enter y/n to delete this credential")
+            yes_no=input().lower()
+            if yes_no == 'y':
+              search_result.delete_credential()
+              
+            else:
+              print("Your lucky I never deleted it.")                         
+              
         elif code_in =='exit':
           print("It was nice hosting you here...your welcome again...")
           print('-'*100)
