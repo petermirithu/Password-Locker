@@ -82,9 +82,11 @@ def credential_exists(site_username):
   
 #The userInterface--------------------------------------------------------------------
 def Interface():
-
+  print("$*~*"*25)
+  print('\n')
   print("Welcome to PASSWORD LOCKER APP") 
   print('\n')
+  print("$*~*"*25)
 
   print("Please Create An Account...")
 
@@ -122,6 +124,7 @@ def Interface():
         print("dsp --Showcase all existing credentials")
         print("dlt --Delete a credential")
         print("exit --Exit the App")
+        print('~*~'*30)
         print("Enter code-------------------------")
         code_in=input().lower()
 
@@ -174,6 +177,9 @@ def Interface():
             pass_Input =input()
 
             save_credential(new_credential(site_name2,user_name2,pass_Input))
+            print('\n')
+            print(f"New credential for --- {site_name2} --- created.")
+            print('\n')
 
           else:
             print('\n')
