@@ -183,7 +183,7 @@ def Interface():
           if display_credential():
             list_len=len(Credential_Sect.credentials_list)
             print('^'*50)
-            print(f"Available credentials...N.O-[{list_len}]")
+            print(f"Available credentials...Total N.O-[{list_len}]")
             print('\n')
 
             for cred in display_credential():
@@ -200,8 +200,9 @@ def Interface():
           print("To Delete......search the credential you want to delete")
           
           if display_credential():
+            list_len=len(Credential_Sect.credentials_list)
             print('^'*50)
-            print("Available credentials...")
+            print(f"You have this credentials Pick one!!!...Total N.O-[{list_len}]")
             print('\n')
 
             for cred in display_credential():
