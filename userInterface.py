@@ -1,6 +1,8 @@
 #!/usr/bin/env python3.6
 from userFile import UserData
+from credentialFile import Credential_Sect
 
+#User account section--------------------------------------------------------------------
 def new_account(firstName,lastName,password):
   '''
   Function to create a new account
@@ -31,7 +33,41 @@ def account_exists(username):
   '''
   return UserData.account_exists(username)
 
-#The userInterface
+
+#credential section---------------------------------------------------------------------
+def new_credential(title,site_username,cred_password):
+  '''
+  Function to that create a new credential
+  '''
+  new_credential=Credential_Sect(title,site_username,cred_password)
+  return new_credential
+
+def save_credential(credentialFile):
+  '''
+  Function that saves a credential
+  '''
+  credentialFile.save_credential()
+
+def generate_password(credentialFile):
+  '''
+  Function that generates a randow=m string which is a password
+  '''
+  credentialFile.generate_password()
+
+def display_credentials():
+  '''
+  Function that displays all credentials existing
+  '''
+  return Credential_Sect.display_credentials()
+
+def delete_credential(credentialFile):
+  '''
+  Function that deletes existing credential
+  '''
+  credentialFile.delete_credential()
+  
+  
+#The userInterface--------------------------------------------------------------------
 def Interface():
   print("Welcome to PASSWORD LOCKER APP") 
   print('\n')
