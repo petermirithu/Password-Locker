@@ -1,7 +1,8 @@
 #!/usr/bin/env python3.6
 from userFile import UserData
-from credentialFile import Credential_Sect
 
+from credentialFile import Credential_Sect
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 #User account section--------------------------------------------------------------------
 def new_account(firstName,lastName,password):
   '''
@@ -94,10 +95,9 @@ def Interface():
   password_log=input()
 
   save_account(new_account(firstName,lastName,password_log))
-
-  print(f"Congrast __ {firstName} __.Please Login to your fresh account...")
   print('\n')
-
+  print(f"Congrast __ {firstName} __.Please Login to your fresh account...")
+  
   print("Enter firstname")
   user_name_Log=input()
   print("Enter password")
@@ -106,6 +106,7 @@ def Interface():
   if account_exists(user_name_Log):
     account_found= find_account(user_name_Log)
     if account_found.firstName == user_name_Log and account_found.password==psswd_Login:
+      print('\n')
       print(f"Succesfully loged in as ....{user_name_Log}...")
       print('\n')    
 
@@ -152,17 +153,16 @@ def Interface():
           user_name2=input()
 
           print("Would you want me generate a password for you?")
-          print("key in_________:y --for Yes_______:n --for No")
+          print("key in (y):-for Yes_____(n):-for No")
           print("Enter y/n")
           pass_ans=input().lower()
 
           if pass_ans == 'y':
             pass_Gen= generate_password()
             save_credential(new_credential(site_name2,user_name2,pass_Gen))
-                 
+            print('\n')
             print("Here is your password......")
             print('\n')
-
             print(f" ____ {pass_Gen} ____")
             print('\n')  
 
@@ -181,8 +181,9 @@ def Interface():
 
         elif code_in =='dsp':
           if display_credential():
+            list_len=len(Credential_Sect.credentials_list)
             print('^'*50)
-            print("Available credentials...")
+            print(f"Available credentials...N.O-[{list_len}]")
             print('\n')
 
             for cred in display_credential():
@@ -213,7 +214,7 @@ def Interface():
             print('\n')
             print('^'*50)
           
-          print("Enter the user_name for that credential to search...")  
+          print("Enter the user_name for that credential to delete...")  
           search=input()
           if credential_exists(search):
             search_result=find_credential(search)
@@ -226,6 +227,7 @@ def Interface():
             yes_no=input().lower()
             if yes_no == 'y':
               search_result.delete_credential()
+              print(f"Successfully deleted ~~~ {search_result.site_username} ~~~")
               
             else:
               print("Your lucky I never deleted it.")                         
