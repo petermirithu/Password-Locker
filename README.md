@@ -2,7 +2,7 @@
 
 This project was generated with [Python](https://www.python.org/) version 3.8.0 <br>
 
-![picture](./images/passwd.png)
+![picture](./images/paswd.png)
 
 ## Author: 
   * Peter Mirithu 
