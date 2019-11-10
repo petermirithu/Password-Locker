@@ -1,6 +1,7 @@
 # PASSWORD_LOCKER!
 
 This project was generated with [Python](https://www.python.org/) version 3.8.0
+![picture](./images/passwd.png)
 
 ## Author: 
   * Peter Mirithu 
